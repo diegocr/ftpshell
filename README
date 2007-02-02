@@ -1,0 +1,82 @@
+Short:        FTPShell - FTP Client which runs as a shell....
+Author:       Diego Casorran
+Uploader:     diegocr <at> users <dot> sf <dot> net
+Type:         comm/tcp
+Version:      1.0
+Architecture: m68k-amigaos > 3.0
+Requires:     asyncio.library
+
+FTPShell  is a FTP Client which tend to be run like another shell, it could
+look  like  all  other  those  tools from the Linux platfirm which does the
+same,  but  it  is  not!,  it  have  been created from scratch being a pure
+AmigaOS  program,  just  check  the  benchmarks  section and you'll see for
+yourself :-)
+
+Available commands:
+        ls              list            dir             quit    
+        exit            cd              cwd             put     
+        get             raw     
+
+ls, dir and list is the same, as for quit and exit, or cd and cwd
+
+To download files use the get command, and put command to upload.
+
+using  ls,  dir or list, receives the ftp server's filelisting and ftpshell
+pre-process  it  to  print  it  to  you  using a own formatting (similar to
+AmigaDOS's  list  command),  if you want no such formatting (or if ftpshell
+report  some  problem),  using  'ls  -l' will return the server filelisting
+as-is.
+
+
+  F E A T U R E S
+==============================================================
+
+ - By default, complete directories are downloaded or 
+uploaded recursively.
+
+ - Supports hardlinks and softlinks, for both, files and dirs.
+
+ - Partial 64bits support. You can download a directory which
+has a size of 1TB (one terabyte), but no single files higher 
+than 2GB (thats a limitation of our AmigaOS 3.x ...)
+
+ - By default, timestamps are respected, downloading or 
+uploading, on whatever you transfer the file's time will be 
+keep according to the machine (not when you dl/ul them)
+
+ - The faster FTP Client available for AmigaOS :-)
+
+
+  B E N C H M A R K S
+==============================================================
+
+benchmarks running on A1200 060, transfering a RAR compressed
+file of about 20MB from/to a SFS 1.254 partition.
+
+==============================================================
+ Under MiamiDX   |     ATC     |    AmiFTP   |  ftpshell
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ downloading     |   167Kb/s   |   170Kb/s   |   194Kb/s
+--------------------------------------------------------------
+ uploading       |    78Kb/s   |    86Kb/s   |    98Kb/s
+==============================================================
+
+==============================================================
+ Under Genesis   |     ATC     |    AmiFTP   |  ftpshell
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ downloading     |   539Kb/s   |   497Kb/s   |   626Kb/s
+--------------------------------------------------------------
+ uploading       |   297Kb/s   |   328Kb/s   |   357Kb/s
+==============================================================
+==============================================================
+
+Speeds was calculated by average meter from 50% of the 
+transfered size to the end.
+
+We recommend to use Genesis, for obvious reasons.
+
+Also, I've developed this program *just* for me being able to 
+transfers files from my miggy to the PeeCee (or viceversa) as
+fast as possible, if you have problems using it with remote
+server(s) it is not my problem ;-D
+
